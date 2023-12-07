@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usługi fryzjerskie</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+    <div id="firstleft">
+        <a href="index.html">
+            <h2>SALON FRYZJERSKI</h2>
+        </a>
+        <img src="obraz2.jpg" alt="Czesanie">
+    </div>
+    <div id="firstright">
+        <h2>MENU</h2>
+    </div>
+    <div id="secondright">
+        <ol>
+            <li>
+                <a href="fryzura.html">
+                    Strzyżenie
+                </a>
+                    <ul>
+                        <li>krótkie</li>
+                        <li>średnie</li>
+                        <li>półdługie</li>
+                        <li>długie</li>
+                    </ul>
+            </li>
+            <li>Czesanie</li>
+            <li>Koloryzacja</li>
+        </ol>
+    </div>
+    <div id="secondleft">
+        <h3>Dziś promocja na strzyżenie włosów</h3>
+        <input type="radio" name="cut" id="radio1">
+        <label>Krótkie</label><br>
+        <input type="radio" name="cut" id="radio2">
+        <label>Średnie</label><br>
+        <input type="radio" name="cut" id="radio3">
+        <label>Półdługie</label><br>
+        <input type="radio" name="cut" id="radio4">
+        <label>Długie</label><br>
+        <input type="button" value="Odkryj promocję" id="btn">
+        <p id="output"></p>
+    </div>
+
+    <div id="thirdright">
+        <img src="obraz1.jpg" alt="Fryzjer">
+    </div>
+
+    <footer id="footer"><p>Autor: Patryk Czupak</p></footer>
+    <script>
+        const radio1 = document.querySelector("#radio1")
+        const radio2 = document.querySelector("#radio2")
+        const radio3 = document.querySelector("#radio3")
+        const radio4 = document.querySelector("#radio4")
+        const output = document.querySelector("#output")
+        const btn = document.querySelector("#btn")
+        btn.addEventListener("click", ()=>{
+            if(radio1.checked){
+                output.textContent = 'Cena strzyżenia: 25'
+            }
+            if(radio2.checked){
+                output.textContent = 'Cena strzyżenia: 30'
+            }
+            if(radio3.checked){
+                output.textContent = 'Cena strzyżenia: 40'
+            }
+            if(radio4.checked){
+                output.textContent = 'Cena strzyżenia: 50'
+            }
+        })
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+select imie,nazwisko,opis,zdjecie from osoby where Hobby_id = 1 or hobby_id = 2 or hobby_id = 6
+select osoby.id,osoby.nazwisko,hobby.nazwa from osoby inner join hobby on osoby.Hobby_id = hobby.id where osoby.rok_urodzenia > 2000
+select id,zdjecia from osoby where imie = "Monika" limit 5
+create table wpisy (id int PRIMARY KEY,wpis varchar(255),uzytkownik_id int not null);

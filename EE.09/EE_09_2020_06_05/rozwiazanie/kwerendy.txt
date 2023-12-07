@@ -1,0 +1,4 @@
+select imie,nazwisko from kadra where stanowisko = 'fryzjer';
+SELECT count(*) from uslugi where rodzaj = 2;
+create user fryzjer@localhost identified by 'Fryz12';
+grant alter,select,update on egzamin2.kadra to Fryzjer@localhost;

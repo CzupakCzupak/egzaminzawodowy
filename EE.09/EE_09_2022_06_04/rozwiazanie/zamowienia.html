@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zamówienia hurtowe</title>
+    <link rel="stylesheet" href="styl4.css" />
+  </head>
+  <body>
+    <header id="baner">
+      <h1>Sieci komputerowe</h1>
+    </header>
+    <div id="lewy">
+      <h2>Aktualizacja i zamówienia materiałów</h2>
+      <p>Do wewnętrznego użytku firmy</p>
+      <img src="obraz.png" alt="sieć komputerowa" />
+    </div>
+    <div id="prawy">
+      <table>
+        <tr>
+          <th>Produkt</th>
+          <th>Jednostka</th>
+          <th>Dostępna ilość</th>
+          <th>Aktualizacja</th>
+          <th>Zamówienie</th>
+        </tr>
+        <tr>
+          <td class="nazwa" data-id="1">Skrętka U/UTP drut</td>
+          <td>metr</td>
+          <td class="ilosc">20</td>
+          <td><input type="button" value="Aktualizuj" class="update" /></td>
+          <td><input type="button" value="Zamów" class="order" /></td>
+        </tr>
+        <tr>
+          <td class="nazwa" data-id="1">Skrętka U/UTP linka</td>
+          <td>metr</td>
+          <td class="ilosc">2</td>
+          <td><input type="button" value="Aktualizuj" class="update" /></td>
+          <td><input type="button" value="Zamów" class="order" /></td>
+        </tr>
+        <tr>
+          <td class="nazwa" data-id="1">Wtyki 8P8C</td>
+          <td>sztuki</td>
+          <td class="ilosc">10</td>
+          <td><input type="button" value="Aktualizuj" class="update" /></td>
+          <td><input type="button" value="Zamów" class="order" /></td>
+        </tr>
+        <tr>
+          <td class="nazwa" data-id="1">Moduły Keystone</td>
+          <td>sztuki</td>
+          <td class="ilosc">30</td>
+          <td><input type="button" value="Aktualizuj" class="update" /></td>
+          <td><input type="button" value="Zamów" class="order" /></td>
+        </tr>
+      </table>
+    </div>
+    <footer id="stopka">
+      <a href="http://sieci.pl/">Nasza strona internetowa</a>
+      <p>Stronę przygotował: Patryk Czupak</p>
+    </footer>
+    <script>
+      const braki = document.querySelectorAll(".ilosc");
+      const update = document.querySelectorAll(".update");
+      const order = document.querySelectorAll(".order");
+
+      update.forEach((item) => {
+        item.addEventListener("click", updateQuantity);
+      });
+
+      order.forEach((item) => {
+        item.addEventListener("click", updateOrder);
+      });
+
+      function checkQuantity() {
+        braki.forEach((item) => {
+          if (item.textContent == 0) {
+            item.style.background = "red";
+          } else if (item.textContent >= 1 && item.textContent <= 5) {
+            item.style.background = "yellow";
+          } else {
+            item.style.background = "honeydew";
+          }
+        });
+      }
+
+      function updateQuantity(e) {
+        const parentEl = e.target.closest("tr");
+        let nowaIlosc = prompt("Podaj nową ilość:");
+        const iloscEl = parentEl.querySelector(".ilosc");
+        iloscEl.textContent = nowaIlosc;
+        checkQuantity();
+      }
+
+      function updateOrder(e) {
+        const parentEl = e.target.closest("tr");
+        const nazwa = parentEl.querySelector(".nazwa");
+        let ilosc = parseInt(nazwa.dataset.id);
+        ilosc += 1;
+        nazwa.dataset.id = ilosc;
+        alert(`Zamówienie nr: ${ilosc} Produkt: ${nazwa.textContent}`);
+      }
+
+      checkQuantity();
+    </script>
+  </body>
+</html>

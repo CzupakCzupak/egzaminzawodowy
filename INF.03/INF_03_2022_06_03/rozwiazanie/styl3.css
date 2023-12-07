@@ -1,0 +1,54 @@
+#lewy,
+#prawy {
+  float: left;
+  background-color: seagreen;
+  color: white;
+  height: 260px;
+  line-height: 150px;
+  font-size: 160%;
+}
+
+#lewy {
+  width: 75%;
+}
+
+#prawy {
+  width: 25%;
+  text-align: center;
+}
+
+#glowny {
+  clear: both;
+  background-color: mintcream;
+  padding: 80px;
+}
+
+#stopkal,
+#stopkar {
+  background-color: seagreen;
+  color: white;
+  width: 50%;
+  text-align: center;
+  height: 70px;
+  float: left;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+img {
+  box-shadow: 15px 15px 10px dimgray;
+}
+
+a {
+  text-decoration: none;
+  background-color: mintcream;
+  color: seagreen;
+  padding: 15px;
+  line-height: 70px;
+}
+
+* {
+  font-family: Verdana;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>malarz</title>
+    <link rel="stylesheet" href="styl_1.css">
+</head>
+<body>
+    <header id="baner">
+        <h1>Malowanie pokoi i biur</h1>
+    </header>
+    <div id="lewy">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="mieszamy.html">Mieszamy</a></li>
+            <li><a href="cena.html">Wyceniamy</a></li>
+        </ul>
+    </div>
+    <div id="srodkowy">
+        <h2>Zapotrzebowanie na farbe</h2>
+        <label for="">
+            Powierzchnia malowania (m<sup>2</sup>):
+            <input type="number" id="powierzchnia">
+        </label>
+        <input type="button" id="oblicz" value="Policz">
+        <div class="output"></div>
+    </div>
+    <div id="prawy">
+        <img src="obraz.png" alt="Próbki farb">
+    </div>
+    <footer id="stopka">
+        <h3>MALARZ</h3>
+        <p>Strone opacował: Czupak</p>
+    </footer>
+    <script>
+        const btn = document.querySelector('#oblicz')
+        const pow = document.querySelector('#powierzchnia')
+        const output = document.querySelector('.output')
+
+        btn.addEventListener('click',()=>{
+            let powierzchnia = pow.value
+            let wynik = Math.round(powierzchnia / 4)
+            output.textContent = `Liczba potrzebnych puszek: ${wynik}`
+        })
+    </script>
+</body>
+</html>

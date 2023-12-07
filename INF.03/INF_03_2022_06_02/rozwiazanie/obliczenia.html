@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stacja paliw</title>
+    <link rel="stylesheet" href="styl2.css" />
+  </head>
+  <body>
+    <div class="baner">
+      <h1>Całodobowa stacja paliw</h1>
+    </div>
+    <div class="menu">
+      <a href="stacja.html">
+        <img src="home.png" alt="" />
+      </a>
+      <a href="obliczenia.html">
+        <img src="znak.png" alt="" />
+      </a>
+      <a href="kwerendy.txt">Pobierz dokumenty</a>
+    </div>
+    <div class="lewy">
+      <h2>Orientacyjny koszt paliwa</h2>
+      Rodzaj paliwa (1-benzyna, 2-olej napędowy):
+      <br />
+      <input type="number" name="" id="rodzaj" /><br />
+      Ile litrów?
+      <br />
+      <input type="number" name="" id="ilosc" /><br />
+      <input type="button" value="OBLICZ" id="oblicz" />
+      <div class="wynik"></div>
+    </div>
+    <div class="prawy">
+      <img src="samochod.png" alt="samochód" />
+    </div>
+    <div class="stopka">
+      <p>Strone opracował: Patryk Czupak</p>
+    </div>
+    <script>
+      const wynik = document.querySelector(".wynik");
+      const btn = document.querySelector("#oblicz");
+      btn.addEventListener("click", () => {
+        let rodzaj = document.querySelector("#rodzaj").value;
+        let ilosc = document.querySelector("#ilosc").value;
+        if (rodzaj == 1) {
+          let cena = 4 * ilosc;
+          wynik.textContent = `koszt paliwa: ${cena} zł`;
+        } else if (rodzaj == 2) {
+          let cena = 3.5 * ilosc;
+          wynik.textContent = `koszt paliwa: ${cena} zł`;
+        } else {
+          wynik.textContent = `koszt paliwa: 0 zł`;
+        }
+      });
+    </script>
+  </body>
+</html>

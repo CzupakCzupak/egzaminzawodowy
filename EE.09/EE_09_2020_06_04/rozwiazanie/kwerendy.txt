@@ -1,0 +1,4 @@
+select nazwa,cena from uslugi where cena < 30;
+SELECT SUM(cena) from uslugi where rodzaj = 1;
+create user kosmetyczka identified by 'Kosmet34';
+GRANT SELECT,INSERT on egzamin1.uslugi to kosmetyczka;

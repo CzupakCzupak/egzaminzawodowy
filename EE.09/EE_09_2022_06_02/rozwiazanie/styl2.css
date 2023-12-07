@@ -1,0 +1,61 @@
+#kontener{
+    font-family: Helvetica,sans-serif;
+    background-color: Linen;
+    color: #222;
+    margin: auto;
+    width: 90%;
+}
+
+#banerlewy,#banerprawy{
+    background-color: black;
+    color: white;
+    width: 50%;
+    height: 100px;
+}
+
+#banerlewy{
+    float: left;
+}
+
+#banerprawy{
+    float: right;
+}
+
+#glowny{
+    clear: both;
+    padding: 20px;
+}
+
+#stopka{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+table{
+    margin: 40px;
+}
+
+td,th{
+    padding: 30px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+a{
+    color: #aaa;
+text-decoration: none;
+}
+
+a:hover{
+    color: white;
+}
+
+li{
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    border-bottom: 1px solid white;
+}
+

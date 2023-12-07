@@ -1,0 +1,4 @@
+select id,imie,nazwisko,rok_urodzenia,zdjecie from osoby limit 30;
+select osoby.imie,osoby.nazwisko,osoby.rok_urodzenia,osoby.opis,osoby.zdjecie,hobby.nazwa from osoby inner join hobby on osoby.id = hobby.id where hobby.id = 10;
+select avg(rok_urodzenia),min(rok_urodzenia),max(rok_urodzenia) from osoby;
+update osoby set opis = 'lubie samochody' where Hobby_id = 4;

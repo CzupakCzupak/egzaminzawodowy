@@ -1,0 +1,4 @@
+select dataZadania,wpis from zadania where miesiac = 'sierpien'
+select miesiac,rok from zadania where dataZadania like '%-08-%'
+select miesiac,count(miesiac) from zadania where wpis like "Weterynarz%" group by miesiac
+update zadania set wpis = 'Wycieczka: Zalew Mietkowski' where dataZadania = '2020-08-09';

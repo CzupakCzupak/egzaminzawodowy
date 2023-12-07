@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+}
+
+#firstleft{
+    height: 400px;
+    width: 70%;
+    background-color: snow;
+    text-align: center;
+    float: left;
+}
+
+#secondleft{
+    height: 400px;
+    width: 70%;
+    background-color: snow;
+    font-size: 150%;
+float: left;
+
+}
+
+#firstright{
+    height: 150px;
+    width: 30%;
+    background-color: steelblue;
+    color: #fff;
+    float: right;
+}
+
+#secondright{
+    height: 350px;
+    width: 30%;
+    background-color: steelblue;
+    color: #fff;
+    float: right;
+}
+
+#thirdright{
+    height: 300px;
+    width: 30%;
+    background-color: Snow;
+    text-align: center;
+    float: right;
+}
+
+#footer{
+    background-color: steelblue;
+    color: #fff;
+    clear: both;
+}
+
+img{
+    padding: 4px;
+}
+
+img:hover{
+    padding: 3px;
+    border: 1px solid steelblue;
+}

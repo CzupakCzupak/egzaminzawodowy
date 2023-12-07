@@ -1,0 +1,53 @@
+=== UPDATE ===
+update rezerwacje set liczba_dn = 4 where liczba_dn < 4
+
+=== CREATE USER === 
+create user najemca identified by 'n@AJEM1@!'
+
+=== CREATE VIEW ===
+create view pomieszczenie1 AS SELECT malowanie.id_sciany,malowanie.id_farby,malowanie.liczba_puszek from malowanie where malowanie.id_pomieszczenia = 1
+
+=== CENA ZA 1 LITR PUSZKI ===
+select  kolor,cena/pojemnosc as 'cena jednostkowa' from farby
+
+=== INSERT === 
+INSERT INTO zawody_wedkarskie VALUES('','2','4','2021-09-28',' Andrzej Nowak');
+
+=== GRANT === 
+GRANT SELECT,INSERT,UPDATE on samochody to 'jan'@'localhost';
+
+=== ALTER TABLE ===
+ALTER TABLE ryby add column dobowy_limit TINYINT unsigned
+alter table dane add COLUMN stanowisko TEXT;
+
+=== INNER JOIN === 
+SELECT ryby.nazwa,lowisko.akwen,lowisko.wojewodztwo from ryby inner join lowisko on ryby.id = lowisko.Ryby_id where lowisko.rodzaj = '3'
+
+=== LEFT JOIN === 
+=== RIGHT JOIN === 
+=== JOIN ===
+
+=== WHERE [VARIABLE] LIKE '' === 
+select nr_rejsu, kierunek from przyloty where nr_rejsu like '%LX%'
+
+=== AVG() === 
+select avg(rocznik) from samochody where marka like "opel";
+
+=== DROP COLUMN === 
+alter klasa drop column cena
+alter table ogloszenia drop column uzytkownik_id
+
+=== DROP DATABASE === 
+DROP DATABASE wedkarstwo
+
+=== TOP/BOTTOM 30 === (ORDER BY DESC/ASC)
+select id,imie,nazwisko,rok_urodzenia,zdjecie from osoby limit 30;
+
+=== MIN/MAX ===
+select avg(rok_urodzenia),min(rok_urodzenia),max(rok_urodzenia) from osoby;
+
+=== CREATE TABLE ===
+create table wpisy (id int PRIMARY KEY,wpis varchar(255),uzytkownik_id int not null);
+
+=== BETWEEN === 
+select id,nazwisko from pracownicy where czyBadania = 0 and dataUr BETWEEN '1970-01-01' and '1979-12-12';
