@@ -1,0 +1,4 @@
+SELECT nazwa,pasmo from szczyty where wysokosc > 1500;
+SELECT nazwa from szczyty order by wysokosc DESC limit 1
+create user Leon@localhost identified by 'Leon%Zawodowiec';
+grant all PRIVILEGES on gory.* to 'Leon'@localhost;

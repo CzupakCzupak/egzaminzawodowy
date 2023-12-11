@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl2.css" />
+  </head>
+  <body>
+    <div id="baner"><h1>Galeria obrazów</h1></div>
+    <div id="lewy">
+      <img src="zdjecie.jpg" alt="zdjęcie dnia" />
+      <h3>Zdjęcia opublikowali</h3>
+      <table>
+        <tr>
+          <td>Anna Porada</td>
+          <td>10 zdjęć</td>
+        </tr>
+        <tr>
+          <td>Krzysztof Wasilewski</td>
+          <td>12 zdjęć</td>
+        </tr>
+        <tr>
+          <td>Monika Kowalska</td>
+          <td>4 zdjęcia</td>
+        </tr>
+      </table>
+    </div>
+    <div id="prawy">
+      <input type="button" value="prev" class="prev" />
+      <img src="1.jpg" alt="galeria" class="bigimg" />
+      <input type="button" value="next" class="next" />
+      <hr />
+      <img src="1.jpg" alt="miniatura" class="miniatura" />
+      <img src="2.jpg" alt="miniatura" class="miniatura" />
+      <img src="3.jpg" alt="miniatura" class="miniatura" />
+      <img src="4.jpg" alt="miniatura" class="miniatura" />
+      <img src="5.jpg" alt="miniatura" class="miniatura" />
+    </div>
+    <footer id="stopka">
+      <a href="https://pixabay.com" target="_blank">Więcej obrazów</a>
+      <p>Galerię wykonał: Patryk Czupak</p>
+    </footer>
+    <script>
+      const mini = document.querySelectorAll(".miniatura");
+      const Bigimg = document.querySelector(".bigimg");
+      const next = document.querySelector(".next");
+      const prev = document.querySelector(".prev");
+
+      mini.forEach((item) => {
+        item.addEventListener("click", () => {
+          const miniSrc = item.getAttribute("src");
+          Bigimg.src = miniSrc;
+        });
+      });
+
+      function ChangeImage(e) {
+        if (e.target.classList.contains("next")) {
+          const imgSrc = Bigimg.getAttribute("src");
+          const table = imgSrc.split(".");
+          if (table[0] == 5) {
+            Bigimg.src = "1.jpg";
+          } else {
+            const wartosc = parseInt(table[0]) + 1;
+            Bigimg.src = wartosc + ".jpg";
+          }
+        } else {
+          const imgSrc = Bigimg.getAttribute("src");
+          const table = imgSrc.split(".");
+          if (table[0] == 1) {
+            Bigimg.src = "5.jpg";
+          } else {
+            const wartosc = parseInt(table[0]) - 1;
+            Bigimg.src = wartosc + ".jpg";
+          }
+        }
+      }
+
+      next.addEventListener("click", ChangeImage);
+      prev.addEventListener("click", ChangeImage);
+    </script>
+  </body>
+</html>
