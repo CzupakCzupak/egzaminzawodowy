@@ -1,0 +1,51 @@
+* {
+  font-family: Garamond, "serif";
+}
+
+#baner {
+  background: linear-gradient(#97b498, #c8e6c9);
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+#lewy {
+  background-color: #c8e6c9;
+  color: #005005;
+  width: 40%;
+  height: 600px;
+  float: left;
+}
+
+#prawy {
+  float: left;
+  color: #005005;
+  width: 60%;
+  height: 600px;
+  overflow: scroll;
+}
+
+#stopka {
+  clear: both;
+  background: linear-gradient(#c8e6c9, #97b498);
+  color: white;
+  padding: 12px;
+}
+
+video {
+  width: 100%;
+}
+
+form {
+  padding: 10px 50px;
+}
+
+input[type="submit"] {
+  background-color: #97b498;
+  color: white;
+}
+
+input[type="submit"]:hover {
+  background-color: white;
+  color: #97b498;
+}

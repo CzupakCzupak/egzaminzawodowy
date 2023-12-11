@@ -1,0 +1,4 @@
+insert into odpowiedzi values('','1','5','Przyda Ci się także wysoki stół, na którym postawisz pieska.');
+SELECT konta.nick,YEAR(CURDATE()) - YEAR(konta.rejestracja) as 'latNaForum' from konta where nick = 'Jacek' or nick = 'Tomek' or nick = 'Monika';
+select konta.nick, konta.postow,pytania.pytanie from konta INNER JOIN pytania on konta.id = pytania.konta_id where konta.id = 1;
+SELECT odpowiedzi.id,odpowiedzi.odpowiedz,konta.nick from odpowiedzi inner join konta on odpowiedzi.konta_id = konta.id where odpowiedzi.Pytania_id = 1;
