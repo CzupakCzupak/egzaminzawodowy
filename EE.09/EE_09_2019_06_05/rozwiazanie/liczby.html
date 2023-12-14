@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciągi liczbowe</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+   <div id="baner1">
+    <h2>Poznaj ciągi liczbowe</h2>
+   </div> 
+   <div id="baner2">
+    <a href="liczby.html"><h5>Ciągi arytmetyczne</h5></a>
+   </div> 
+   <div id="baner3">
+    <a href="fib.html"><h5>Ciąg Fibonacciego</h5></a>
+   </div> 
+   <div id="baner4">
+    <img src="obraz1.png" alt="Fibonacci">
+   </div> 
+    <div id="lewy">
+        <ol>
+            <li>ciągi arytmetyczne</li>
+            <li>ciągi geometryczne</li>
+            <li>ciąg Fibonacciego</li>
+        </ol>
+    </div>
+    <div id="prawy">
+        <h2>Generowanie ciągu arytmetycznego</h2>
+        <label for="a1">
+            Pierwszy wyraz A1:
+            <input type="number" id="a1">
+        </label><br>
+        <label for="r">
+            Różnica ciągu R:
+            <input type="number" id="r">
+        </label><br>
+        <label for="n">
+            Liczba wyrazów ciągu N:
+            <input type="number" id="n">
+        </label><br>
+        <input type="button" value="Generuj ciąg" id="btn">
+        <p id="output"></p>
+    </div>
+    <div id="stopka">
+        <p>Autor: Patryk Czupak</p>
+    </div>
+    <script>
+        const a1 = document.querySelector("#a1")
+        const r = document.querySelector("#r")
+        const n = document.querySelector("#n")
+        const btn = document.querySelector("#btn")
+        const output = document.querySelector("#output")
+        
+        btn.addEventListener('click',()=>{
+            let stringArray = []
+            let a1val = a1.value
+            for (let i = 0; i < n.value; i++) {
+                stringArray.push(`${a1val}`)
+                a1val = parseInt(a1val) + parseInt(r.value)
+            }
+            output.textContent = stringArray.toString()
+        })
+    </script>
+</body>
+</html>
